@@ -17,7 +17,7 @@ class TransferData:
 
                     # construct the full Dropbox path
                 relative_path = os.path.relpath(local_path, file_from)
-                dropbox_path = os.path.join(file_to, relative_path)
+                dropbox_path = os.path.join(file_to, filename)
                     # upload the file
                 with open(local_path, 'rb') as f:
                     dbx.files_upload(f.read(), dropbox_path, mode=WriteMode('overwrite'))
